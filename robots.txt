@@ -1,0 +1,45 @@
+User-agent: *
+Disallow: /this_is_not_the_admin_portal
+Disallow: /definitely_not_admin_here
+Disallow: /dont_even_try_admin
+Disallow: /fake_admin_panel
+Disallow: /admin_test_do_not_use
+Disallow: /TUAH_admin_portal_2024  
+Disallow: /real_admin_secret_path
+Disallow: /super_secret_admin_area
+
+# Backup files (archived)
+Disallow: /backup_2023.zip
+Disallow: /backup_2024_march.tar.gz
+Disallow: /db_backup.sql
+
+# Configuration files
+Disallow: /config.ini
+Disallow: /settings.json
+Disallow: /secrets.txt
+
+# API Documentation
+Disallow: /api_docs/
+Disallow: /swagger/
+
+# Debug information
+Disallow: /debug/
+Disallow: /phpinfo.php
+Disallow: /test.php
+
+# Development
+Disallow: /.git/
+Disallow: /vendor/
+Disallow: /node_modules/
+Disallow: /composer.json
+
+# Public Access
+Allow: /index.html
+Allow: /login.php
+Allow: /register.php
+Allow: /contact.php
+
+# Note for developers: 
+# - Remove test credentials before production
+# - Disable /api/check_user endpoint
+# - Change default admin password from 'SyntOrnere2024!'

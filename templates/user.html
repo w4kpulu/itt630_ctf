@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Dashboard</title>
+</head>
+<body>
+    <h1>Welcome, {{ username }}!</h1>
+    <p>{{ message }}</p>
+    <a href="{{ url_for('logout') }}">Logout</a>
+    
+    <div style="margin-top: 50px; font-size: 12px; color: #ccc;">
+        <p>Employee ID: {{ session.user_id }}</p>
+        <p>Role: {{ session.role }}</p>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Portal - TUAH Corp</title>
+    <style>
+        body { font-family: monospace; background: #0a0a0a; color: #0f0; }
+        .flag { font-size: 24px; padding: 20px; border: 2px solid #0f0; margin: 50px; }
+    </style>
+</head>
+<body>
+    <h1>=== SUPER ADMIN PORTAL ===</h1>
+    <p>Welcome, {{ session.username }}!</p>
+    
+    <div class="flag">
+        FLAG: {{ flag }}
+    </div>
+    
+    <p style="color: #666; margin-top: 50px;">
+        System Status: SECURE<br>
+        Last Login: 2024-03-15 14:30:00 UTC<br>
+        Access Level: MAXIMUM
+    </p>
+</body>
+</html>

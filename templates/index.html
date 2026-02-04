@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TUAH Corp - Portal</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 800px; margin: 50px auto; padding: 20px; }
+        .container { border: 1px solid #ddd; padding: 30px; border-radius: 10px; }
+        .hidden { color: #ccc; font-size: 12px; margin-top: 50px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to TUAH Corp Portal</h1>
+        <p>Employee login system v2.1</p>
+        
+        <div style="margin: 30px 0;">
+            <a href="{{ url_for('login') }}" style="padding: 10px 20px; background: #007bff; color: white; text-decoration: none; border-radius: 5px;">
+                Employee Login
+            </a>
+        </div>
+        
+        <!-- Hidden hint in source code -->
+        <div class="hidden">
+            <!-- Note to devs: Remember to disable /api/check_user in production -->
+            <!-- Admin naming convention: TUAH_* -->
+        </div>
+    </div>
+    
+    <!-- JavaScript for user enumeration -->
+    <script>
+        async function checkUser() {
+            const username = prompt("Enter username to check:");
+            if (!username) return;
+            
+            const formData = new FormData();
+            formData.append('username', username);
+            
+            const response = await fetch('/api/check_user', {
+                method: 'POST',
+                body: formData
+            });
+            
+            const data = await response.json();
+            alert(data.message + (data.hint ? '\n' + data.hint : ''));
+        }
+    </script>
+    
+    <button onclick="checkUser()" style="position: fixed; bottom: 10px; right: 10px; padding: 5px 10px; font-size: 12px;">
+        Check User
+    </button>
+</body>
+</html>
